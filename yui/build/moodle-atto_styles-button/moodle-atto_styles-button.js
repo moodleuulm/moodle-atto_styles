@@ -141,6 +141,18 @@ Y.namespace('M.atto_styles').Button = Y.Base.create('button', Y.M.editor_atto.Ed
             }
             eID.setAttribute('class', style[1]);
         } else {
+            element = window.getSelection().focusNode;
+            // First remove eventually old applied styles before adding the new one.
+            for (p = element; p; p = p.parentNode) {
+                if (p.nodeType !== 1) {
+                    continue;
+                }
+                pstyle = window.getComputedStyle(p, null);
+                if (pstyle) {
+                    p.removeAttribute('class');
+                    break;
+                }
+            }
             styles = style[1].split(" ");
             host = this.get('host');
             for (i = 0; i < styles.length; i += 1) {

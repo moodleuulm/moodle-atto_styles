@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2020-10-08 - Fixed bug that styles are not replaced correctly when applying a new style.
 * 2020-10-06 - Fixed error in JSON example and improved setting with JSON validation.
                PLEASE NOTE: Now, surrounding square brackets are mandatory when defining multiple styles.
                             An upgrade script will handle existent settings. However, after updating the plugin
